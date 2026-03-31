@@ -1,0 +1,115 @@
+/* FetchData.css */
+
+.fetch-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  animation: slideUp 0.5s ease-out; /* Matches RegistrationForm animation */
+  text-align: center;
+}
+
+.fetch-container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 32px;
+  letter-spacing: -0.025em;
+}
+
+/* The Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* Individual Post Cards */
+.card {
+  background: #ffffff;
+  border-radius: 20px; /* Consistent with registration form */
+  padding: 30px;
+  text-align: left;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 
+    0 1px 3px rgba(0,0,0,0.02),
+    0 20px 25px -5px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 30px -10px rgba(0,0,0,0.08);
+}
+
+.card h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #4f46e5; /* Evergreen Indigo Accent */
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #64748b; /* Muted Slate */
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+/* Read Full Article Button Styling */
+.read-more {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #fdfdfd;
+  color: #4f46e5;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.read-more:hover {
+  background: #4f46e5;
+  color: #ffffff;
+  border-color: #4f46e5;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
+}
+
+.read-more:active {
+  transform: scale(0.98); /* Tactile feel from RegistrationForm */
+}
+
+.read-more::after {
+  content: '→';
+  margin-left: 8px;
+}
+
+/* Loading & Error States */
+.loading-text {
+  color: #64748b;
+  font-weight: 500;
+  margin-top: 50px;
+}
+
+.error-text {
+  color: #e11d48;
+  background: #fff1f2;
+  padding: 15px 30px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 50px;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

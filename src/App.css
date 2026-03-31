@@ -1,38 +1,203 @@
-.App {
-  text-align: center;
+/* =========================================
+   1. GLOBAL VARIABLES & RESET
+   ========================================= */
+:root {
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --bg-body: #f8fafc;
+  --bg-card: #ffffff;
+  --border-color: rgba(226, 232, 240, 0.8);
+  --radius-lg: 20px;
+  --radius-md: 10px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.02);
+  --shadow-md: 0 20px 25px -5px rgba(0,0,0,0.05), 0 10px 10px -5px rgba(0,0,0,0.04);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-.App-header {
-  background-color: #282c34;
+/* =========================================
+   2. APP LAYOUT
+   ========================================= */
+.app-root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.app-content {
+  flex: 1;
+  padding: 40px 20px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-start; /* Keeps content at top while centering horizontally */
+  animation: slideUp 0.5s ease-out;
 }
 
-.App-link {
-  color: #61dafb;
+/* =========================================
+   3. MODERNIZED HEADER
+   ========================================= */
+.header {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 16px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
+  height: 100px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.header h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+}
+
+.header h2::after {
+  content: '.';
+  color: var(--primary);
+}
+
+/* =========================================
+   4. NAVIGATION BUTTONS
+   ========================================= */
+.nav-buttons {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.nav-buttons a {
+  text-decoration: none;
+  color: var(--text-muted);
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-buttons a:hover {
+  color: var(--primary);
+  background: rgba(79, 70, 229, 0.05);
+}
+
+/* NavLink 'active' class automatically added by react-router-dom */
+.nav-buttons a.active {
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+/* =========================================
+   5. COMMON ANIMATIONS
+   ========================================= */
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(15px); 
   }
-  to {
-    transform: rotate(360deg);
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* =========================================
+   6. RESPONSIVENESS
+   ========================================= */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .nav-buttons {
+    width: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
+
+  .nav-buttons a {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  .app-content {
+    padding: 20px 10px;
+  }
+}
+
+.main-footer {
+  background: #ffffff;
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+  padding: 24px 5%;
+  margin-top: auto; /* This pushes footer to bottom in a flex container */
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-brand {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 1.1rem;
+}
+
+.footer-brand span {
+  color: #4f46e5;
+}
+
+.footer-links p {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 20px;
+  color: #64748b;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.footer-socials span:hover {
+  color: #4f46e5;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
   }
 }

@@ -1,0 +1,153 @@
+/* LoginPanel.css */
+
+/* Container & Transitions */
+.login-container {
+  width: 100%;
+  max-width: 440px;
+  padding: 20px;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* The Card */
+.login-card, .welcome-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 48px 40px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 
+    0 1px 3px rgba(0,0,0,0.02),
+    0 20px 25px -5px rgba(0,0,0,0.05),
+    0 10px 10px -5px rgba(0,0,0,0.02);
+}
+
+/* Typography */
+.login-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #0f172a; /* Slate 900 */
+  letter-spacing: -0.025em;
+  margin-bottom: 8px;
+}
+
+.login-subtitle {
+  font-size: 0.95rem;
+  color: #64748b; /* Slate 500 */
+  margin-bottom: 32px;
+}
+
+/* Form Styling */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #334155;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #fdfdfd;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  background: #ffffff;
+  /* Soft blue glow */
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+/* Buttons */
+.login-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #4f46e5;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.2s ease;
+}
+
+.login-btn:hover {
+  background: #4338ca;
+}
+
+.login-btn:active {
+  transform: scale(0.98);
+}
+
+.logout-btn {
+  margin-top: 24px;
+  padding: 12px 32px;
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fee2e2;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #fee2e2;
+}
+
+/* Feedback & Footer */
+.error-text {
+  background: #fff1f2;
+  color: #e11d48;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+  border: 1px solid #ffe4e6;
+}
+
+.login-footer {
+  margin-top: 24px;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.login-footer span {
+  color: #4f46e5;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.login-footer span:hover {
+  text-decoration: underline;
+}
+
+/* Welcome State */
+.welcome-card {
+  text-align: center;
+}
+
+.welcome-text {
+  margin-top: 16px;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #4f46e5;
+}
