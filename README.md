@@ -47,5 +47,5 @@ A full-stack web application for managing student registrations using **React, E
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/evergreen-university-dashboard.git
+git clone https://github.com/valenciowilliam/evergreen-university-dashboard.git
 cd evergreen-university-dashboard
