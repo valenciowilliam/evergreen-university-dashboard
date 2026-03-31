@@ -6,8 +6,8 @@ A full-stack web application for managing student registrations using **React, E
 
 ## 🚀 Live Demo
 
-- 🌐 Frontend (Vercel): https://your-frontend.vercel.app  
-- ⚙️ Backend (Render): https://your-backend.onrender.com  
+- 🌐 Frontend (Vercel): https://evergreen-university-dashboard.vercel.app/ 
+- ⚙️ Backend (Render): https://evergreen-university-dashboard.onrender.com
 
 ---
 
