@@ -42,7 +42,7 @@ const FetchData = () => {
 
   return (
     <div className="fetch-container">
-      <h2>Latest Campus Updates</h2>
+      <h2>Latest Articles</h2>
 
       <div className="card-grid">
         {posts.map((post) => (
